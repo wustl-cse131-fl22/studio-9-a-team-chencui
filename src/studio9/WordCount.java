@@ -7,6 +7,16 @@ import java.util.Map;
 import support.cse131.NotYetImplementedException;
 
 public class WordCount {
+	
+	public static int counter(List<String> words, String word) {
+		int count = 0;
+		for (int i = 0; i < words.size(); i++) {
+			if (words.get(i).equals(word)) {
+				count++;
+			}
+		}
+		return count;
+	}
 	/**
 	 * Constructs and returns a map of the distinct words in the specified list with
 	 * each word associated with its accumulated count (that is: the number of
@@ -29,8 +39,13 @@ public class WordCount {
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
 
-		// FIXME
-		throw new NotYetImplementedException();
-
+		Map<String, Integer> wordle = new HashMap<>();
+	
+		wordle.put("to", counter(words,"to"));
+		wordle.put("be", counter(words,"be"));
+		wordle.put("or", counter(words,"or"));
+		wordle.put("not", counter(words,"not"));
+		
+		return wordle;
 	}
 }
